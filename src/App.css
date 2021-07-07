@@ -90,7 +90,8 @@ button:focus {
 }
 
 .grid-container .spinner{
-  background-color: blueviolet;
+  background-color: white;
+  display: none;
 }
 @media (min-width:600px) {
   .container {
@@ -134,7 +135,7 @@ button:focus {
   align-items: center;
   text-align: center;
   margin: auto;
-  margin-top: 15px;
+  /* margin-top: 530px; */
   width:140px;
   height: 40px;
   padding: 10px 20px;

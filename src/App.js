@@ -20,9 +20,9 @@ class App extends React.Component {
     .then(res => res.json())
     .then(data => {
      this.setState({foods:data.data.meals})
-    // console.log(foods)
-    });
-    // .catch(err => alert('Something went wrong!'))
+
+    })
+    .catch(err => alert('Something went wrong!'))
 
   }
 
