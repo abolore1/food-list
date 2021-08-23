@@ -1,7 +1,6 @@
 import React from 'react'
 import Foods from './Foods'
 import './App.css';
-import img from './spinner.gif'
 
 class App extends React.Component {
   state = { 
@@ -10,37 +9,31 @@ class App extends React.Component {
    }
 
   componentDidMount()  {
-    setTimeout(()=>{
-      this.setState({
-        loading:false
-      })
-    },100)
 
-    fetch('https://asm-dev-api.herokuapp.com/api/v1/food')
+    fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
     .then(res => res.json())
     .then(data => {
-     this.setState({foods:data.data.meals})
-    // console.log(foods)
-    });
-    // .catch(err => alert('Something went wrong!'))
+      console.log(data.categories)
+     this.setState({foods:data.categories})
+
+    })
+    .catch(err => alert('Something went wrong!'))
 
   }
 
   render() { 
     let food = this.state.foods.map(food => {
-      return <Foods key={food.strMeal} 
-       imgUrl={food.strMealThumb}
-       strMeal={food.strMeal}
-       price={food.price}
-       description={food.description}
-       ratings={food.ratings}
+      return <Foods key={food.strCategory} 
+      strCategoryThumb={food.strCategoryThumb}
+      strCategory={food.strCategory}
+      strCategoryDescription={food.strCategoryDescription}
+      ratings={food.ratings}
        />
     });
-    const {loading} = this.state;
+    
     return (  
-      <div className="container">
-       <section className="grid-container">{loading?<img src={img} className="spinner" alt="" /> :food}</section>  
-       <input type="button" value="Learn More" id="learn-more" />
+      <div className="container grid-container">
+       {food}
      </div>
     );
   }

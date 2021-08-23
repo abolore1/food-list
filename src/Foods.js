@@ -3,15 +3,13 @@ import React from 'react'
 export default function Foods(props) {
   return (
     <div className="food">
-      <img className="images" src={props.imgUrl} alt=" not displaying" />
+      <img className="images" src={props.strCategoryThumb} alt=" not displaying" />
       <div className="foodDetails">
         <div className='mealNamePrice'>
-          <h1>{props.strMeal} </h1>
-          <h3>{props.price}</h3>
+          <h1>{props.strCategory} </h1>
         </div>
         <div>
-          <p className="para">Served with french fries and + drink</p>
-          <p className="description">{props.description.slice(0,100)}...</p>
+          <p className="description">{props.strCategoryDescription.slice(0,45)}...</p>
         </div>
       </div>
       <div className="footer">
@@ -23,8 +21,8 @@ export default function Foods(props) {
         </p>
         <button>+</button>
       </div>
-     
+      
     </div>
-    
+
   )
 }
