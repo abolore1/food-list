@@ -1,4 +1,4 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"); */
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 * {
   box-sizing: border-box;
@@ -19,6 +19,10 @@ body {
   box-shadow: 5px -3px 9px rgb(197, 193, 193);
 }
 
+/* .container, .container-grid{
+  overflow: hidden;
+} */
+
 img {
   border-top-right-radius: 12px;
   border-bottom-left-radius: 12px;
@@ -26,19 +30,17 @@ img {
   height: 160px;
 }
 
-img:hover {
-  transform: scale(0.9);
+ img:hover {
+  /* transform: scale(1.1); */
   background-color: rgb(241, 237, 110);
+  /* overflow: hidden; */
 }
-/* .mealNamePrice {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  margin-bottom: 10px;
-} */
+.food img:hover {
+  overflow: hidden;
+}
 
 .foodDetails {
-  padding: 10px;
+  padding: 0 15px;
 }
 
 .food {
@@ -51,29 +53,26 @@ img:hover {
 
 .footer {
   display: flex;
-  flex-direction: co;
+  flex-direction: row;
   justify-content: space-between;
-  /* align-items: center; */
   margin-top:20px;
-  background-color: rgb(245, 240, 240);
+  background-color: #f6f3f3;
 }
-
-.footer p {
-  margin-left: 15px;
+.stars{
+  margin:15px;
+  display:flex;
+  flex-direction: row;
   cursor: pointer;
+  
 }
 
-.para{
-  margin:5px 0 15px;
+.w-6{
+  width:1.5em;
+}
+.h-6{
+  height:1.5em;
 }
 
-span.checked {
-  color: #eb9616;
-}
-
-span.unchecked {
-  color: rgb(187, 179, 179);
-}
 
 button {
   cursor: pointer;
@@ -87,7 +86,7 @@ button {
   text-align: center;
 }
 
-button:hover {
+button:active {
   transform: scale(0.9);
 }
 
@@ -95,9 +94,9 @@ button:focus {
   outline: 0;
 }
 
-.grid-container .spinner{
+/* .grid-container .spinner{
   background-color: blueviolet;
-}
+} */
 @media (min-width:600px) {
   .container {
     width: 100%;

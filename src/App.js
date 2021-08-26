@@ -27,13 +27,14 @@ class App extends React.Component {
       strCategoryThumb={food.strCategoryThumb}
       strCategory={food.strCategory}
       strCategoryDescription={food.strCategoryDescription}
-      ratings={food.ratings}
+      // ratings={food.ratings}
        />
     });
     
     return (  
       <div className="container grid-container">
        {food}
+      
      </div>
     );
   }

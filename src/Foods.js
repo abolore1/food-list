@@ -1,4 +1,5 @@
 import React from 'react'
+import RatingStar from './RatingStar'
 
 export default function Foods(props) {
   return (
@@ -13,11 +14,8 @@ export default function Foods(props) {
         </div>
       </div>
       <div className="footer">
-        <p>
-          <span className="fa fa-star checked"></span>
-          <span className="fa fa-star checked"></span>
-          <span className="fa fa-star checked"></span>
-          <span className="fa fa-star unchecked"></span>
+        <p className="para">
+            <RatingStar />
         </p>
         <button>+</button>
       </div>
