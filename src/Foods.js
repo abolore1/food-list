@@ -7,7 +7,7 @@ export default function Foods(props) {
       <img className="images" src={props.strCategoryThumb} alt=" not displaying" />
       <div className="foodDetails">
         <div className='mealNamePrice'>
-          <h1>{props.strCategory} </h1>
+          <h3>{props.strCategory} </h1>
         </div>
         <div>
           <p className="description">{props.strCategoryDescription.slice(0,45)}...</p>
