@@ -1,43 +1,35 @@
-import React from 'react'
-import Foods from './Foods'
-import './App.css';
+import Navbar from './Navbar';
+import Home from './Home'
+import Create from './Create';
+import BlogDetails from './BlogDetails';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import NotFound from './NotFound';
 
-class App extends React.Component {
-  state = { 
-    foods:[],
-    loading:true
-   }
 
-  componentDidMount()  {
-
-    fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
-    .then(res => res.json())
-    .then(data => {
-      console.log(data.categories)
-     this.setState({foods:data.categories})
-
-    })
-    .catch(err => alert('Something went wrong!'))
-
-  }
-
-  render() { 
-    let food = this.state.foods.map(food => {
-      return <Foods key={food.strCategory} 
-      strCategoryThumb={food.strCategoryThumb}
-      strCategory={food.strCategory}
-      strCategoryDescription={food.strCategoryDescription}
-      // ratings={food.ratings}
-       />
-    });
-    
-    return (  
-      <div className="container grid-container">
-       {food}
-      
-     </div>
-    );
-  }
+function App(){
+  return (
+   <Router>
+       <div className='App'>
+      <div className="content">
+        <Navbar/>
+       <Switch>
+        <Route exact path='/'>
+         <Home/>
+        </Route>
+        <Route  path='/create'>
+         <Create/>
+        </Route>
+        <Route  path='/blogs/:id'>
+         <BlogDetails/>
+        </Route>
+        <Route path='*'>
+         <NotFound />
+        </Route>
+       </Switch>
+      </div>
+    </div>
+   </Router>
+  )
 }
  
 export default App ;
